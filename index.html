@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dumb.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">    
+</head>
+<body>
+    <header>Library
+    <button id="btn">+</button>
+    </header>
+    <div class="appendContainer">
+        <div class="container">
+            <h3>"The Last of Us"</h3>
+            <a>Joel Miller</a>
+            <a>44 Pages</a>
+            <button class="readBtn" id="readBtn">Read</button>
+        </div>
+    </div>
+    <div class="containerOf">
+        <form action="">
+            <div class="container">
+                <fieldset>
+                    <legend>Title</legend>
+                    <input type="text" id="title" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Author</legend>
+                    <input type="text" id="author" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Pages</legend>
+                    <input type="number" id="pages" required>
+                </fieldset>
+                <fieldset class="select">
+                    <legend>Read?</legend>
+                    <div>
+                        <input type="radio" name="haveU" id="YES">
+                        <label for="YES">Yes</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="haveU" id="NO" checked>
+                        <label for="NO">No</label>
+                    </div>
+                </fieldset>
+            </div>
+            <button type="submit" value="Submit" id="submit">+</button>
+        </form>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>

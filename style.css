@@ -1,0 +1,106 @@
+html {
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(18, 18, 18);
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+header {
+    font-weight: 700;
+    font-size: 30px;
+    display: flex;
+    gap: 20px
+}
+
+#btn:hover {
+    background-color: gray;
+    border-radius: 50%
+}
+
+.readBtn {
+    background-color: #9FFF9C;
+    color: black;
+    border-radius: 7px;
+    padding: 5px 15px 5px 15px;
+    width: 90px;
+}
+
+#readBtn:active {   
+    background-color: Focus;
+}
+
+.container {
+    display: flex;
+    background-color: rgb(38, 38, 38);
+    border-radius: 20px;
+    width: 600px;
+    padding-left: 15px;
+    padding-right: 15px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.unreadBtn {
+    background-color: #FF9C9C;
+    color: black;
+    border-radius: 7px;
+    padding: 5px 15px 5px 15px;
+}
+
+form {
+    display: flex;
+}
+
+.container {
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+fieldset {
+    display: flex;
+    border: 0;
+}
+
+input[type="text"],
+input[type="number"],
+ textarea {
+    background-color: rgb(38, 38, 38);
+    border: none;
+    border-bottom: 2px solid black;
+    color: white;
+  }
+
+legend {
+    font-weight: 700;
+}
+
+
+button[type="submit"] {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.containerOf {
+    display: flex;
+    margin-left: 44px;
+    gap: 10px
+}
+
+#title,
+#author,
+#pages {
+    width: 120px;
+    height: 15px;
+}
+
+.container:not(:first-child) {
+    margin-top: 15px;
+}
