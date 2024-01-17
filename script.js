@@ -1,42 +1,83 @@
 const submitBtn = document.getElementById("submit");
-const appendContainer = document.querySelector(".appendContainer")
-const container = document.querySelector(".container")
-const novoContainer = document.createElement("div");
-novoContainer.classList.add("container")
 
-submitBtn.addEventListener("click", function() {
+submitBtn.addEventListener("click", function(event) {
+    event.preventDefault()
 
-    const title = document.getElementById("title").value;
-    const author = document.getElementById("author").value;
-    const pages = document.getElementById("pages").value;
+    if (
+        !document.getElementById("title").checkValidity() ||
+        !document.getElementById("author").checkValidity() ||
+        !document.getElementById("pages").checkValidity()
+    ) { alert("Fill the fields bro") }
+        
+
+    else { 
+    
+    const newBook = new createBook()
+    
+    const container = document.createElement("div");
+    container.classList.add("container")
 
     let result
     const bookTitle = document.createElement("h3")
-    bookTitle.textContent = title
+    bookTitle.textContent = `"${newBook.title}"`
 
     const bookAuthor = document.createElement("a")
-    bookAuthor.textContent = author
+    bookAuthor.textContent = newBook.author
 
     const bookPages = document.createElement("a")
-    bookPages.textContent = pages
+    bookPages.textContent = `${newBook.pages} Pages`
+    
+    console.log("chegou até aqui")
 
-    result = [bookTitle, bookAuthor, bookPages]
+    let bookRead = ""
+    if(newBook.read === "YES") {
+        bookRead = document.createElement("button")
+        bookRead.classList.add("readBtn")
+        bookRead.textContent = "Read"
+    }
+    else if (newBook.read === "NO") {
+        bookRead = document.createElement("button")
+        bookRead.classList.add("unreadBtn")
+        bookRead.textContent = "Not Read"
+    }
+
+    result = [bookTitle, bookAuthor, bookPages, bookRead]
     
     result.forEach(element => {
-        novoContainer.appendChild(element)
+        container.appendChild(element)
     })
 
-    const newBook = new createBook(title, author, pages)
-    appendContainer.appendChild(novoContainer)
+    const superContainer = document.querySelector(".superContainer")
+    const bigContainer = document.createElement("div");
+    bigContainer.classList.add("bigContainer")
 
+    const createBtn = document.createElement("button")
+    createBtn.classList.add("removeBtn")
+    
+    const createImg = document.createElement("img")
+    createImg.src = "/trash-can-outline.svg"
+    createBtn.appendChild(createImg)
+
+    createImg.addEventListener("click", () => {
+        bigContainer.parentNode.removeChild(bigContainer)
+    })
+
+    superContainer.appendChild(bigContainer)
+    bigContainer.appendChild(container)
+    bigContainer.appendChild(createBtn)
+
+    document.getElementById("title").value = ""
+    document.getElementById("author").value = ""
+    document.getElementById("pages").value = ""
+    
     console.log(newBook)
-});
+}});
 
-function createBook(title, author, pages) {
-    this.title = title,
-    this.author = author,
-    this.pages = pages
-    // this.haveU = haveU
+function createBook() {
+    this.title = document.getElementById("title").value;
+    this.author = document.getElementById("author").value;
+    this.pages = document.getElementById("pages").value; 
+    this.read = document.querySelector('input[name="option"]:checked').value;
 }
 
 const readBtn = document.getElementById("readBtn");

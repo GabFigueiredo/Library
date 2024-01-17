@@ -42,10 +42,8 @@ header {
     background-color: rgb(38, 38, 38);
     border-radius: 20px;
     width: 600px;
-    padding-left: 15px;
-    padding-right: 15px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
 .unreadBtn {
@@ -57,6 +55,8 @@ header {
 
 form {
     display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .container {
@@ -86,12 +86,20 @@ legend {
 button[type="submit"] {
     font-weight: 700;
     font-size: 30px;
+    background-color: rgb(38, 38, 38);
+    border-radius: 50%;
+    height: min-content;
+}
+
+.removeBtn {
+    padding: 0px;
 }
 
 .containerOf {
     display: flex;
-    margin-left: 44px;
-    gap: 10px
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 #title,
@@ -104,3 +112,39 @@ button[type="submit"] {
 .container:not(:first-child) {
     margin-top: 15px;
 }
+
+.bigContainer {
+    display: flex;
+    margin-top: 15px;
+    gap: 10px;
+    width: min-content;
+}
+
+img {
+    filter: invert(100%);
+    width: 30px;
+}
+
+.superContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 15px;
+}
+
+h3 {
+   margin-left: 30px; 
+}
+
+.readBtn,
+.unreadBtn {
+    margin-right: 30px;
+}
+
+.containerOf .container {
+    width: 600px;
+
+}
+
+
+

@@ -10,14 +10,18 @@
 </head>
 <body>
     <header>Library
-    <button id="btn">+</button>
     </header>
-    <div class="appendContainer">
-        <div class="container">
-            <h3>"The Last of Us"</h3>
-            <a>Joel Miller</a>
-            <a>44 Pages</a>
-            <button class="readBtn" id="readBtn">Read</button>
+    <div class="superContainer">
+        <div class="bigContainer">
+            <div class="container">
+                <h3>"The Last of Us"</h3>
+                <a>Joel Miller</a>
+                <a>44 Pages</a>
+                <button class="readBtn" id="readBtn">Read</button>
+            </div>
+            <button class="blablaGang">
+                <img src="/trash-can-outline.svg" alt="" class="src">
+            </button>
         </div>
     </div>
     <div class="containerOf">
@@ -38,11 +42,11 @@
                 <fieldset class="select">
                     <legend>Read?</legend>
                     <div>
-                        <input type="radio" name="haveU" id="YES">
+                        <input type="radio" name="option" id="YES" value="YES">
                         <label for="YES">Yes</label>
                     </div>
                     <div>
-                        <input type="radio" name="haveU" id="NO" checked>
+                        <input type="radio" name="option" id="NO" checked value="NO">
                         <label for="NO">No</label>
                     </div>
                 </fieldset>
@@ -51,5 +55,6 @@
         </form>
         </div>
     <script src="script.js"></script>
+
 </body>
 </html>
